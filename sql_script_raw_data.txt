@@ -1,0 +1,19 @@
+
+CREATE TABLE public.raw_data (
+	poster_link text NULL,
+	series_title text NULL,
+	released_year text NULL,
+	certificate text NULL,
+	runtime text NULL,
+	genre text NULL,
+	imdb_rating text NULL,
+	overview text NULL,
+	meta_score text NULL,
+	director text NULL,
+	star1 text NULL,
+	star2 text NULL,
+	star3 text NULL,
+	star4 text NULL,
+	no_of_votes text NULL,
+	gross text NULL
+);

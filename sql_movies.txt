@@ -1,0 +1,23 @@
+-- public.movies definition
+
+-- Drop table
+
+-- DROP TABLE public.movies;
+
+CREATE TABLE public.movies (
+	movie_id serial4 NOT NULL,
+	title text NOT NULL,
+	release_year int4 NULL,
+	certificate text NULL,
+	runtime_min int4 NULL,
+	genre text NULL,
+	imdb_rating numeric(3, 1) NULL,
+	overview text NULL,
+	meta_score int4 NULL,
+	director_id int4 NULL,
+	votes int4 NULL,
+	gross numeric(15) NULL,
+	CONSTRAINT movies_pkey PRIMARY KEY (movie_id),
+	CONSTRAINT uq_movie_title_year UNIQUE (title, release_year),
+	CONSTRAINT movies_director_id_fkey FOREIGN KEY (director_id) REFERENCES public.directors(director_id)
+);

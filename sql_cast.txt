@@ -1,0 +1,14 @@
+-- public.movie_cast definition
+
+-- Drop table
+
+-- DROP TABLE public.movie_cast;
+
+CREATE TABLE public.movie_cast (
+	movie_id int4 NOT NULL,
+	star_name text NOT NULL,
+	star_order int2 NOT NULL,
+	CONSTRAINT movie_cast_pkey PRIMARY KEY (movie_id, star_order),
+	CONSTRAINT movie_cast_star_order_check CHECK (((star_order >= 1) AND (star_order <= 4))),
+	CONSTRAINT movie_cast_movie_id_fkey FOREIGN KEY (movie_id) REFERENCES public.movies(movie_id) ON DELETE CASCADE
+);
